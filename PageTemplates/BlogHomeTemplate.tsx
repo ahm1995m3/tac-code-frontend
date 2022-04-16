@@ -1,4 +1,4 @@
-import React, { Children, ReactNode, useState } from "react";
+import React, { ReactNode } from "react";
 import { typeOfBlogData } from "../Types/blogContent";
 import { Grid, Space } from "@mantine/core";
 
@@ -10,7 +10,7 @@ type Props = {
   children: ReactNode;
 };
 
-function MainBlogPage({ allBlogData, children }: Props) {
+function BlogHomeTemplate({ allBlogData, children }: Props) {
   return (
     <>
       <MainPageTemplate
@@ -27,9 +27,13 @@ function MainBlogPage({ allBlogData, children }: Props) {
           </h1>
           <Space h={"xl"} />
 
-          <Grid align={"stretch"} justify={"center"}>
+          <Grid
+            key={"blog-card-main-grid"}
+            align={"stretch"}
+            justify={"center"}
+          >
             {allBlogData.map((blogData: typeOfBlogData) => (
-              <Grid.Col sm={6} md={4}>
+              <Grid.Col sm={6} md={4} key={blogData.id + "container"}>
                 <BlogCard key={blogData.id} blogData={blogData} />
               </Grid.Col>
             ))}
@@ -43,4 +47,4 @@ function MainBlogPage({ allBlogData, children }: Props) {
   );
 }
 
-export default MainBlogPage;
+export default BlogHomeTemplate;

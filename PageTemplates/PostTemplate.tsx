@@ -70,35 +70,6 @@ function PostTemplate({ blogData }: Props) {
           <section className="blog-comment-section">
             <UserComment blogComments={blogOnDisplay.comments} />
           </section>
-
-          {/* {blogOnDisplay.comments.map(
-            (blogCommentsData: typeOfBlogCommentMeta) => {
-              return (
-                <>
-                  <Paper shadow="xs" radius="md" p="xl" withBorder>
-                    <Space h="md" />
-                    <Group style={{ width: "100%" }}>
-                      <strong>
-                        {" "}
-                        <p className="text-color-blue">Some User</p>
-                      </strong>
-                      <p className="font-italic font-size-sm">
-                        <strong>
-                          {" "}
-                          {userCommentWrittenDate(blogCommentsData)}
-                        </strong>
-                      </p>
-                    </Group>
-                    <Space h="md" />
-                    <Blockquote className="font-size-md ">
-                      {blogCommentsData.description}
-                    </Blockquote>
-                  </Paper>
-                  <Space h="xl" />
-                </>
-              );
-            }
-          )} */}
         </Stack>
       </section>
     </MainPageTemplate>

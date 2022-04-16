@@ -14,7 +14,7 @@ export default function PostMaster() {
   return (
     <>
       <Transition status={status} error={error} />
-      {data && status === "success" && data !== undefined && (
+      {data && status === "success" && (
         <PostTemplate blogData={data} />
       )}
     </>

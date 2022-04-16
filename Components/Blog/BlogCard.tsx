@@ -28,7 +28,7 @@ export default function BlogCard({ blogData }: Props) {
               <strong className="font-size-md"> {blogData.title} </strong>
             </h3>
 
-            <Group spacing="xs">
+            <Group key={"blog-author-main"} spacing="xs">
               {blogData.authors.map((authorData: typeOfBlogAuthorData) => {
                 return (
                   <>
@@ -54,7 +54,9 @@ export default function BlogCard({ blogData }: Props) {
             key={blogData.id + "link  to blog post"}
             href={`/post/${encodeURIComponent(blogData.id)}`}
           >
-            <SC_Button2 className="font-size-md">Read More</SC_Button2>
+            <SC_Button2 name={"Read More"} className="font-size-md">
+              Read More
+            </SC_Button2>
           </Link>
         </Stack>
       </Card>

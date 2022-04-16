@@ -8,7 +8,6 @@ type Props = {
 };
 
 const userCommentWrittenDate = (commentData: typeOfBlogCommentMeta) => {
-  const differenceInTime = getDifferenceInTimeFromToday(commentData.createdAt);
 
   if (commentData.updatedAt) {
     return (

@@ -4,7 +4,6 @@ import { useState } from "react";
 import BlogHomeTemplate from "../PageTemplates/BlogHomeTemplate";
 import Transition from "../PageTemplates/Utils/Transition";
 import { usePosts } from "../Hooks/usePosts";
-import { QueryClient, QueryClientProvider } from "react-query";
 
 import SC_Button1 from "../styles/Basic/SC_Button1";
 import { Group } from "@mantine/core";

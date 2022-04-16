@@ -1,27 +1,15 @@
-import { render, screen, getAllByAltText } from "@testing-library/react";
-import { QueryClient, QueryClientProvider } from "react-query";
+import { screen, getAllByAltText } from "@testing-library/react";
+
 import App from "../pages/index";
-const queryClient = new QueryClient();
-describe("Should render the home page without crashing", () => {
-  beforeAll(() => {
-    jest.useFakeTimers();
-  });
 
-  afterAll(() => {
-    jest.useRealTimers();
-  });
+import { renderWithClient } from "./utils";
 
-  it("Renders the home page", () => {
-    render(
-      <>
-        <QueryClientProvider client={queryClient}>
-          <App />
-        </QueryClientProvider>
-      </>
-    );
+describe("Testing the home page", async () => {
+  test("successful query component", async () => {
+    const result = renderWithClient(<App />);
 
-    jest.advanceTimersByTime(3000);
+    expect(await result.findByText(/The Fake Blog/i)).toBeInTheDocument();
 
-    screen.debug();
+    expect(await result.getAllByText(/Read More/i)).toHaveLength(5);
   });
 });
