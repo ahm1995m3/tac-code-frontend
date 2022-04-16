@@ -5,7 +5,6 @@ import SC_Button2 from "../../styles/Basic/SC_Button2";
 import Link from "next/link";
 import { Card, Image, Divider, Group, Stack, Avatar } from "@mantine/core";
 import prettyDate from "../../Utils/Functions/PrettyDate";
-
 type Props = {
   blogData: typeOfBlogData;
 };
@@ -17,7 +16,7 @@ export default function BlogCard({ blogData }: Props) {
         <Card.Section key={blogData.id + "featured image"}>
           <Image
             key={blogData.id}
-            src="https://picsum.photos/400/300"
+            src="/assets/placeholder.JPG"
             alt="placeholder"
           />
         </Card.Section>

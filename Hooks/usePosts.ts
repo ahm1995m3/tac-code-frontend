@@ -2,9 +2,9 @@ import { useQuery } from "react-query";
 import axios from "axios";
 import { typeOfBlogData } from "../Types/blogContent";
 
-const getBlogByPageResult = async (pageIndex: number, blockSize: number) => {
-  const url = `https://6144e843411c860017d256f0.mockapi.io/api/v1/posts?`;
+const url = `https://6144e843411c860017d256f0.mockapi.io/api/v1/posts?`;
 
+const getBlogByPageResult = async (pageIndex: number, blockSize: number) => {
   const { data } = await axios.get(url);
 
   return data

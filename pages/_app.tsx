@@ -9,7 +9,6 @@ function MyApp({ Component, pageProps }: AppProps) {
     <QueryClientProvider client={queryClient}>
       <Theme>
         <GlobalStyles />
-        <ReactQueryDevtools />
         <Component {...pageProps} />
       </Theme>
     </QueryClientProvider>

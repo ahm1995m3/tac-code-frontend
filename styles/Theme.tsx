@@ -1,7 +1,7 @@
 import React from "react";
 import { ThemeProvider } from "styled-components";
 
-const theme = {
+const theme: any = {
   colors: {
     darkerNavy: "#222833",
     lighterNavy: "#28303F",
@@ -17,7 +17,7 @@ const theme = {
 };
 
 const Theme = ({ children }) => (
-  <ThemeProvider theme={theme}>{children}</ThemeProvider>
+  <ThemeProvider theme={theme}> {children} </ThemeProvider>
 );
 
 export default Theme;
